@@ -1,0 +1,49 @@
+﻿<UserControl
+    x:Class="CylinderProgressDemo.Controls.CylinderProgress"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:CylinderProgressDemo.Controls"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    x:Name="CP"
+    d:DesignHeight="250"
+    d:DesignWidth="50"
+    mc:Ignorable="d">
+    <Grid
+        Width="{Binding ElementName=CP, Path=Width, FallbackValue=50}"
+        Height="{Binding ElementName=CP, Path=Height, FallbackValue=250}"
+        HorizontalAlignment="Center"
+        VerticalAlignment="Center">
+        <Grid.Resources>
+            <Style TargetType="Rectangle">
+                <Setter Property="Fill" Value="{Binding ElementName=CP, Path=FillBrush, FallbackValue=#36a8e2}" />
+                <Setter Property="RadiusX" Value="25" />
+                <Setter Property="RadiusY" Value="5" />
+            </Style>
+        </Grid.Resources>
+        <Rectangle Opacity="0.25" />
+        <Rectangle
+            Height="10"
+            VerticalAlignment="Top"
+            Opacity="0.15" />
+        <Rectangle
+            x:Name="cylinderBottom"
+            Height="{Binding ElementName=CP, Path=Value, FallbackValue=100}"
+            VerticalAlignment="Bottom" />
+        <Rectangle Opacity="0.6">
+            <Rectangle.Fill>
+                <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,.5">
+                    <GradientStop Color="Black" />
+                    <GradientStop Offset="1" Color="Transparent" />
+                    <GradientStop Offset="0.6" Color="#51000000" />
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Grid
+            x:Name="cylinderTop"
+            Height="{Binding ElementName=CP, Path=Value, FallbackValue=100}"
+            VerticalAlignment="Bottom">
+            <Rectangle Height="10" VerticalAlignment="Top" />
+        </Grid>
+    </Grid>
+</UserControl>

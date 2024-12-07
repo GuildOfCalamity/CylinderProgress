@@ -1,0 +1,74 @@
+﻿<Application
+    x:Class="CylinderProgressDemo.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:CylinderProgressDemo"
+    StartupUri="MainWindow.xaml">
+    <Application.Resources>
+
+        <LinearGradientBrush x:Key="BackgroundBrush" StartPoint="0,0" EndPoint="0,1">
+            <GradientBrush.GradientStops>
+                <GradientStopCollection>
+                    <GradientStop Offset="0.1" Color="#222" />
+                    <GradientStop Offset="0.3" Color="#111" />
+                    <GradientStop Offset="1.0" Color="#000" />
+                </GradientStopCollection>
+            </GradientBrush.GradientStops>
+        </LinearGradientBrush>
+
+        <LinearGradientBrush x:Key="Cylinder1Brush" StartPoint="0,0" EndPoint="0,1">
+            <GradientBrush.GradientStops>
+                <GradientStopCollection>
+                    <GradientStop Offset="0.0" Color="#E2FFD6" />
+                    <GradientStop Offset="1.0" Color="#5EFF19" />
+                </GradientStopCollection>
+            </GradientBrush.GradientStops>
+        </LinearGradientBrush>
+
+        <LinearGradientBrush x:Key="Cylinder2Brush" StartPoint="0,0" EndPoint="0,1">
+            <GradientBrush.GradientStops>
+                <GradientStopCollection>
+                    <GradientStop Offset="0.0" Color="#D1EBFF" />
+                    <GradientStop Offset="0.3" Color="#75C5FF" />
+                    <GradientStop Offset="1.0" Color="#0094FF" />
+                </GradientStopCollection>
+            </GradientBrush.GradientStops>
+        </LinearGradientBrush>
+
+        <LinearGradientBrush x:Key="Cylinder3Brush" StartPoint="0,0.5" EndPoint="0.5,0.519">
+            <GradientBrush.GradientStops>
+                <GradientStopCollection>
+                    <GradientStop Offset="0.5" Color="#FFFAE5" />
+                    <GradientStop Offset="1.0" Color="#FFD91C" />
+                </GradientStopCollection>
+            </GradientBrush.GradientStops>
+        </LinearGradientBrush>
+
+        <LinearGradientBrush x:Key="Cylinder4Brush" StartPoint="0,0.5" EndPoint="0.5,0.5">
+            <GradientBrush.GradientStops>
+                <GradientStopCollection>
+                    <GradientStop Offset="0.1" Color="#EAE5FF" />
+                    <GradientStop Offset="0.5" Color="#9D7FFF" />
+                    <GradientStop Offset="0.8" Color="#6232FF" />
+                    <GradientStop Offset="1.0" Color="#3B00FF" />
+                </GradientStopCollection>
+            </GradientBrush.GradientStops>
+        </LinearGradientBrush>
+
+        <!--#region [Images]-->
+        <BitmapImage x:Key="background" UriSource="Assets/AppIcon.png" />
+
+        <Style x:Key="GridBackground" TargetType="{x:Type Grid}">
+            <Setter Property="Background">
+                <Setter.Value>
+                    <ImageBrush
+                        ImageSource="{StaticResource background}"
+                        Opacity="0.07"
+                        TileMode="None" />
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <!--#endregion-->
+
+    </Application.Resources>
+</Application>
