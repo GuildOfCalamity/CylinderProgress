@@ -20,7 +20,7 @@
    
     > `MaxValue` (double) : the maximum amount for the value
     
-    > `MinValue` (double) : the maximum amount for the value
+    > `MinValue` (double) : the minumum amount for the value
 
     > `Width` (double) : the desired width of the cylinder
 
